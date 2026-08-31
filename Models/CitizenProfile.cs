@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace FixITCityAPI.Models;
+
+public partial class CitizenProfile
+{
+    public int CitizenProfileId { get; set; }
+
+    public int? UserId { get; set; }
+
+    public string? FirstName { get; set; }
+
+    public string? LastName { get; set; }
+
+    public string? PhoneNumber { get; set; }
+
+    public string? AddressLine { get; set; }
+
+    public string? City { get; set; }
+
+    public decimal? Latitude { get; set; }
+
+    public decimal? Longitude { get; set; }
+
+    public virtual ICollection<FaultReport> FaultReports { get; set; } = new List<FaultReport>();
+
+    public virtual ICollection<Notification> Notifications { get; set; } = new List<Notification>();
+
+    public virtual ICollection<ReportFeedback> ReportFeedbacks { get; set; } = new List<ReportFeedback>();
+
+    public virtual User? User { get; set; }
+}
